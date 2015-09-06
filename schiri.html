@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Besetzung</title>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+<script src="js/read_url.js" type="text/javascript"></script>
+<script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+<script src="js/storage.js" type="text/javascript"></script>
+<script src="js/ajax.js" type="text/javascript"></script>
+
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+
+
+</head>
+
+<body>
+	<div data-role="page" id="page1">
+		<div data-role="header" data-theme="b">
+			<h1>Besetzung</h1>
+		</div>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page1">Besetzung</a></li>
+				<li><a href="#page2">Kollegen</a></li>
+			</ul>
+		</div>
+		<!-- main ---->
+		<div data-role="main" class="ui-content">
+			<!--Aufrurfen der funktion URLAuslesen aus read_url.js mit Variable aus combo/Liste -->
+			<div data-role='controlgroup' data-type="horizontal">
+			<select id="combo">
+				<option value="1">Strommer</option>
+				<option value="2">Eisner</option>
+			</select> <a href="javascript:URLAuslesen()" data-role="button" id="Besetzung">Besetzung</a>
+			</div>
+			<div data-role="content" class="content">
+			<h1 id="ausgelesen"></h1>
+			</div>
+			<!-- Begin Storage Bereich -->
+			<div>
+			<ol id="storeBesetzung" contenteditable="false">
+				<li>Local Storage lernen</li>
+			</ol>
+			<input type="text" value="Werner  Strommer" id="demovariable" />
+
+			<div data-role='controlgroup' data-type="horizontal">
+			<a href="javascript:saveContentsVar()" data-role="button" id="saveContent">Var in Storage</a>
+
+			<a href="javascript:saveContents()" data-role="button" id="createLS">Storage anlegen</a>
+
+			<a href="javascript:resetContent()" data-role="button" id="deleteLS">Storage loeschen</a>
+
+			<a href="javascript:LoadSchiri()" data-role="button" id="loadSchiri">Load Schiri</a>
+
+			<a href="javascript:LoadSchiri2()" data-role="button" id="loadSchiri2">Load Schiri2</a>
+
+
+			<a href="#page2" data-role="button" id="gotokollegen">GoPage2_Kollegen</a>
+			</div>
+<!-- End Storage Bereich -->
+			</div>
+		</div>
+		<!-- Footer-->
+		<div data-role="footer">
+			<h2>&copy;wstrommer</h2>
+		</div>
+	</div>
+
+
+
+	<div data-role="page" id="page2">
+		<div data-role="header" data-theme="b">
+			<h1>Besetzung</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<h1>Kollegen</h1>
+
+			<script type="text/javascript">
+			var Schiri1 = localStorage.getItem('SchiriVar');
+			document.write( Schiri1 );
+			</script>
+});
+
+		</div>
+		<div data-role="footer">
+			<h2>&copy;wstrommer</h2>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
