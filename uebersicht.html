@@ -23,23 +23,6 @@
 
     <!-- main ---->
     <div data-role="main" class="ui-content">
-        <!-- Turniername ---->
-        <div data-role="fieldcontain">
-            <label for="Turniername1">Turnierbezeichnung:</label>
-            <input type="text" name="Turniername1" id="Turniername1"/>
-        </div>
-        <!-- Anzahl Teams ---->
-        <div data-role="fieldcontain">
-            <label for="AnzTeams">Anzahl der Teams:</label>
-            <input type="range" name="AnzTeams" id="AnzTeams" value="1" min="2" max="20" data-highlight="true"/>
-        </div>
-
-        <!-- Save und Delete ---->
-        <div data-role='controlgroup' data-type="horizontal">
-            <a href="javascript:saveContentsVar()" data-role="button" id="saveContent">Speichern</a>
-            <a href="javascript:resetContent()" data-role="button" id="deleteLS">Storage loeschen</a>
-            <a href="javascript:changetoUebersicht()" data-role="button" id="changetoUber">Übersicht</a>
-        </div>
 
         <div id="Turnier">
             Turniername:
@@ -47,6 +30,13 @@
         <div id="AnzahlTeams">
             Anzahl Teams:
         </div>
+
+        <!-- Save und Delete ---->
+        <div data-role='controlgroup' data-type="horizontal">
+            <a href="javascript:changetoHome()" data-role="button" id="changetoHome">Home</a>
+        </div>
+
+
     </div>
 </div>
 </body>
